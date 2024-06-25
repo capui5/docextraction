@@ -1,0 +1,10 @@
+<mvc:View
+    controllerName="com.docxtraction.docxtraction.controller.View2"
+    height="100%"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:upload="sap.m.upload"
+>
+
+</mvc:View>
