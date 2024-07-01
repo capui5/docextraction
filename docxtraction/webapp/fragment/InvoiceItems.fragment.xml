@@ -1,0 +1,32 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<Table id="items" busy="{viewModel>/refreshEnabled}"
+		items="{invoice>/items}" inset="true">
+			<columns>
+			<Column>
+				<Text text="{i18n>Description}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>Quantity}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>UnitPrice}" />
+			</Column>
+			<Column>
+				<Text text="{i18n>Amount}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Input value="{invoice>description}" editable="{viewModel>/editable}"/>
+					<Input value="{invoice>quantity}" editable="{viewModel>/editable}"/>
+					<Input value="{invoice>unitPrice}" editable="{viewModel>/editable}"/>
+					<Input value="{invoice>netAmount}" editable="{viewModel>/editable}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>    

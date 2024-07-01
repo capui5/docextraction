@@ -57,7 +57,11 @@
         "settings": {
           "bundleName": "com.docxtraction.docxtraction.i18n.i18n"
         }
-      }
+      },
+      "options": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/Options.json"
+			}
     },
     "resources": {
       "css": [

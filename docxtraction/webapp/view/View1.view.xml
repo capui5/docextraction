@@ -1,12 +1,13 @@
 <mvc:View
     controllerName="com.docxtraction.docxtraction.controller.View1"
     height="100%"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
     xmlns="sap.m"
-    xmlns:upload="sap.m.upload"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
 >
-    <Page
+    <!-- <Page
         title="Docx"
         showHeader="true"
     >
@@ -73,5 +74,52 @@
                 />
             </OverflowToolbar>
         </footer>
-    </Page>
+    </Page> -->
+    <SplitApp id="SplitAppDemo">
+        <masterPages>
+            <Page
+                id="master"
+                title="Upload File"
+            >
+                <l:VerticalLayout
+                    id="layout_uploader"
+                    class="sapUiMediumMargin"
+                >
+                
+                    <u:FileUploader
+                        id="fileUploader"
+                        tooltip="Upload your file to Document Infromation Extraction"
+                        change="onFileChange"
+                    />
+                    <Button
+                        text="Upload File"
+                        press="handleUploadPress"
+                        enabled="{viewModel>/uploadEnabled}"
+                    />
+                    <List
+                        updateFinished="UpdateList"
+                        selectionChange ="OnSelectionChange"
+                        id="ProductList"
+                        items="{ListModel>/results}"
+                        mode="SingleSelect"
+                        includeItemInSelection="true"
+                    >
+                        <StandardListItem
+                            title="{ListModel>fileName}"
+                            description="{ListModel>status}"
+                            iconDensityAware="false"
+                            iconInset="false"
+                         
+                        />
+                    </List>
+                </l:VerticalLayout>
+            </Page>
+        </masterPages>
+        <detailPages>
+            <core:Fragment
+                fragmentName="com.docxtraction.docxtraction.fragment.ObjectPage"
+                type="XML"
+            />
+        </detailPages>
+    </SplitApp>
 </mvc:View>

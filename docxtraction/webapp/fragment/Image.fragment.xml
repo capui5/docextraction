@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <VBox class="sapUiSmallMarginTopBottom sapUiLargeMarginBeginEnd">
+        <HBox justifyContent="SpaceBetween">
+            <VBox>
+                	<Select
+					forceSelection="true"
+					selectedKey="{/SelectedProduct}"
+                      items ="{pageModel>/}"
+                      change ="onChange"
+					>
+					<core:Item key="{pageModel>key}" text="{pageModel>value}" />
+				</Select>
+                 <Image src="{/imageUrl}" width="{/imageWidth}" />
+            </VBox>
+        </HBox>
+    </VBox>
+</core:FragmentDefinition>
